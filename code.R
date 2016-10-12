@@ -1,5 +1,6 @@
 setwd('/home/omar/Desktop/ML_Assign')
-origData <- read.csv2('/home/omar/Desktop/ML_Assign/iris_sub_21655.csv', sep = ',', header = TRUE, stringsAsFactors = FALSE)
+origData <- read.csv2('/home/omar/Desktop/ML_Assign/iris_sub_21655.csv', sep = ',',
+                      header = TRUE, stringsAsFactors = FALSE)
 origData$petal <- as.numeric(origData$petal)
 origData$species <- as.numeric(origData$species)
 speciesNumeric <- origData$X
@@ -45,7 +46,8 @@ training <- function()
     }
   }
   print(length(actualErrorValues))
-  print(paste("Training is finished successfully with learning rate = (", learningRate, "). Number of iterations = ", iterationsCounter))
+  print(paste("Training is finished successfully with learning rate = (", 
+              learningRate, "). Number of iterations = ", iterationsCounter))
 }
 
 thresholdFunction <- function(hValue)
@@ -107,7 +109,20 @@ plottingFunction <- function(selection)
     # first 100 instances (1:100) (g) (5.a) (Iris Class VS Sepal Length)
     plot(as.matrix(origData[2]), speciesNumeric, xlab="Sepal length", ylab="Iris Class (-1:Versicolor / 1:Setosa)",
          col='blue', main = "Iris class variable versus the sepal length")
+  } else
+  {
+    print("Wrong input")
   }
-  
-  
+}
+
+covarianceAndCorrelationFunction <- function()
+{
+  # Petal
+  petalCov <- cov(speciesNumeric, origData$species)
+  petalCor <- cor(speciesNumeric, origData$species)
+  print(paste("Petal covariance =", petalCov, " and Petal correlation =", petalCor))
+  # Sepal
+  sepalCov <- cov(speciesNumeric, origData$petal)
+  sepalCor <- cor(speciesNumeric, origData$petal)
+  print(paste("Sepal covariance =", sepalCov, " and Sepal correlation =", sepalCor))
 }
