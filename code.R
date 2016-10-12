@@ -82,33 +82,37 @@ plottingFunction <- function(selection)
   {
     # all 6 iterations (1:600) (h)
     plot(c(1:(iterationsCounter*nrow(origData))), actualErrorValues, type="l", xlab="Index", ylab="Error",col="red",
-         main = "Error value against Index over the whole learning process \n Using the output of the neural network directly without thresholding")
+         main = "Error value against Index over the whole learning process \n Using the output of the neural network directly without thresholding",
+         cex.lab=1.2, cex.axis = 1.2, cex=1.2)
   } else if(selection == 2)
   {
     # first 100 instances (1:100) (h)
     plot(c(1:100), actualErrorValues[1:100], type="l", xlab="Index", ylab="Error", col="red",
-         main = "Error value against the instance index ranging over 1:100 \n Using the output of the neural network directly without thresholding")
+         main = "Error value against the instance index ranging over 1:100 \n Using the output of the neural network directly without thresholding",
+         cex.lab=1.2, cex.axis = 1.2, cex=1.2)
   } else if(selection == 3)
   {
     # all 6 iterations (1:600) (g)
     plot(c(1:(iterationsCounter*nrow(origData))), thresholdErrorValues, type="l", xlab="Index", ylab="Error", col="red",
-         main = "Error value against Index over the whole learning process \n Using thresholding")
+         main = "Error value against Index over the whole learning process \n Using thresholding",
+         cex.lab=1.2, cex.axis = 1.2, cex=1.2)
   } else if(selection == 4)
   {
     # first 100 instances (1:100) (g)
     plot(c(1:100), thresholdErrorValues[1:100], type="l", xlab="Index", ylab="Error", col="red",
-         main = "Error value against the instance index ranging over 1:100 \n Using thresholding")
+         main = "Error value against the instance index ranging over 1:100 \n Using thresholding",
+         cex.lab=1.2, cex.axis = 1.2, cex=1.2)
   }
   else if(selection == 5)
   {
     # first 100 instances (1:100) (g) (5.a) (Iris Class VS Petal Length)
     plot(as.matrix(origData[3]), speciesNumeric, xlab="Petal length", ylab="Iris Class (-1:Versicolor / 1:Setosa)",
-         col='blue', main = "Iris class variable versus the petal length")
+         col='blue', main = "Iris class variable versus the petal length", cex.lab=1.2, cex.axis = 1.2, cex=1.2)
   } else if(selection == 6)
   {
     # first 100 instances (1:100) (g) (5.a) (Iris Class VS Sepal Length)
     plot(as.matrix(origData[2]), speciesNumeric, xlab="Sepal length", ylab="Iris Class (-1:Versicolor / 1:Setosa)",
-         col='blue', main = "Iris class variable versus the sepal length")
+         col='blue', main = "Iris class variable versus the sepal length", cex.lab=1.2, cex.axis = 1.2, cex=1.2)
   } else
   {
     print("Wrong input")
