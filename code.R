@@ -77,6 +77,7 @@ testing <- function(inSepal, inPetal)
 
 plottingFunction <- function(selection)
 {
+  par(mar=c(4,4.2,3,1.5))
   
   if (selection == 1)
   {
